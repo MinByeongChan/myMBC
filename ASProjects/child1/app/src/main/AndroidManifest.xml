@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBZZxJ_Jt1g5WCuY8JehSgXrbBSOKmIIXI" />
+
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
 
         <activity android:name=".Login">
             <intent-filter>
@@ -20,8 +30,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Signon" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".Sub_map"/>
+        <activity android:name=".Sub_info"/>
+        <activity android:name=".One"/>
+        <activity android:name=".Two"/>
 
         <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
@@ -32,7 +47,7 @@
         <service
             android:name=".MyFirebaseInstanceIDService">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 

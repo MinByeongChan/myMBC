@@ -54,12 +54,7 @@ public class Signon extends AppCompatActivity {
         final EditText codeText = (EditText) findViewById(R.id.codeEdt);
 
         final String token = FirebaseInstanceId.getInstance().getToken();
-
-//        final Intent intent = new Intent(getApplicationContext(), MyFirebaseInstanceIDService.class);
-//        startService(intent);
-//        Intent intent = getIntent();
-//        final String token = intent.getStringExtra("Token");
-//        Log.d("TAG","토큰   "+token);
+        Log.d("TAG", "instaneid.getinstance() :    "+token);
 
         gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -179,12 +174,9 @@ public class Signon extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {}
         });
 
-
-
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Log.d("TAG","토큰 : "+token);
 
                 final String userID = idText.getText().toString();
@@ -250,7 +242,6 @@ public class Signon extends AppCompatActivity {
 
                             //회원 가입 성공시 success값이 true임
                             if (success) {
-
                                 Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
 
                                 //알림상자를 만들어서 보여줌
@@ -277,9 +268,7 @@ public class Signon extends AppCompatActivity {
                                         .setNegativeButton("ok", null)
                                         .create()
                                         .show();
-
                             }
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -290,7 +279,11 @@ public class Signon extends AppCompatActivity {
 
                 //volley 사용법
                 //1. RequestObject를 생성한다. 이때 서버로부터 데이터를 받을 responseListener를 반드시 넘겨준다.
-                SignonRequest registerRequest = new SignonRequest(userName, userID, userPassword, userEmail, userGender, userCode, userState, token, responseListener);
+                SignonRequest registerRequest = new SignonRequest(
+                        userName, userID, userPassword, userEmail,
+                        userGender, userCode, userState, token, responseListener
+                );
+
                 Log.d("Request_TAG"+userState, "Request_TAG_관계자");
                 //2. RequestQueue를 생성한다.
                 RequestQueue queue = Volley.newRequestQueue(Signon.this);

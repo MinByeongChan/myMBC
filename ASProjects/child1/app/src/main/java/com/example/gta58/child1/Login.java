@@ -29,14 +29,9 @@ public class Login extends AppCompatActivity {
         final Button btn3 = (Button) findViewById(R.id.btn3);
         final Button btn4 = (Button) findViewById(R.id.btn4);
 
-
         btn3.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
-
             public void onClick(View view) {
-
                 final String userID = idinput.getText().toString();
                 final String userPassword = passwordinput.getText().toString();
 
@@ -46,9 +41,8 @@ public class Login extends AppCompatActivity {
                         try{
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-                                                                                                                                     //서버에서 보내준 값이 true이면?
+                            //서버에서 보내준 값이 true이면?
                             if(success){
-
                                 String userID = jsonResponse.getString("userID");
                                 String userPassword = jsonResponse.getString("userPassword");
                                 Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
@@ -58,7 +52,6 @@ public class Login extends AppCompatActivity {
                                 intent.putExtra("userID", userID);
                                 finish();
                                 Login.this.startActivity(intent);
-
                             }
                             //로그인 실패시
                             else{
@@ -77,9 +70,7 @@ public class Login extends AppCompatActivity {
                 LoginRequest loginRequest = new LoginRequest(userID, userPassword, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(Login.this);
                 queue.add(loginRequest);
-
             }
-
         });
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +80,5 @@ public class Login extends AppCompatActivity {
             }
 
         });
-
     }
 }

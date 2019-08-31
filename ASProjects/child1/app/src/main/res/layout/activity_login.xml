@@ -59,14 +59,13 @@
         />
     <EditText
         android:id="@+id/passwordinput"
-        android:inputType="textPassword"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
-        android:textColor="#000000"
-        android:ems="10"
         android:background="@drawable/border"
-        />
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="#000000" />
 
 
     <LinearLayout
@@ -102,5 +101,7 @@
         android:textColor="#000000"
         android:checked="true"
         />
+
+
 
 </LinearLayout>

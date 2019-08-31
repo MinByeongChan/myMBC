@@ -20,7 +20,8 @@ public class SignonRequest extends StringRequest {
         //생성자
         public SignonRequest(String userName, String userID, String userPassword,
                              String userEmail, String userGender, String userCode,
-                             String userState, String token, Response.Listener<String> listener) {
+                             String userState, String token,
+                             Response.Listener<String> listener) {
             super(Method.POST, URL, listener, null);
 
             parameters = new HashMap<>();
