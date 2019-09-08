@@ -3,7 +3,7 @@
 
 using namespace std;
 
-//제곱 함수 
+//sdad제곱 함수 
 int EXPO(int a){
 	return a*a;
 }
