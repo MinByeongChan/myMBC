@@ -32,7 +32,7 @@ int main()
 	unionParent(parent, 6, 7);
 	unionParent(parent, 7, 8);
 
-	printf("1과 5는 연결되어있나요 ?? %d\n", findParent(parent, 1, 5));
+	printf("1�� 5는 연결되어있나요 ?? %d\n", findParent(parent, 1, 5));
 	unionParent(parent, 1, 5);
 	printf("1과 5는 연결되어있나요 ?? %d\n", findParent(parent, 1, 5));
 	
