@@ -1,12 +1,15 @@
 package com.example.gta58.child1;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -15,6 +18,12 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class Login extends AppCompatActivity {
 
@@ -29,9 +38,14 @@ public class Login extends AppCompatActivity {
         final Button btn3 = (Button) findViewById(R.id.btn3);
         final Button btn4 = (Button) findViewById(R.id.btn4);
 
+
         btn3.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
+
             public void onClick(View view) {
+
                 final String userID = idinput.getText().toString();
                 final String userPassword = passwordinput.getText().toString();
 
@@ -40,18 +54,24 @@ public class Login extends AppCompatActivity {
                     public void onResponse(String response) {
                         try{
                             JSONObject jsonResponse = new JSONObject(response);
+
                             boolean success = jsonResponse.getBoolean("success");
-                            //서버에서 보내준 값이 true이면?
+                            String value1 = jsonResponse.getString("value1");
+
                             if(success){
-                                String userID = jsonResponse.getString("userID");
-                                String userPassword = jsonResponse.getString("userPassword");
-                                Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
+
+//                                String userID = jsonResponse.getString("userID");
+//                                String userPassword = jsonResponse.getString("userPassword");
+//                                String userKinder = jsonResponse.getString("userName");
+                                Log.e("TAG TEST111 :", response);
+                                Toast.makeText(getApplicationContext(), userID, Toast.LENGTH_SHORT).show();
 
                                 //로그인에 성공했으므로 MainActivity로 넘어감
                                 Intent intent = new Intent(Login.this, MainActivity.class);
-                                intent.putExtra("userID", userID);
+                                intent.putExtra("value1",value1);
                                 finish();
                                 Login.this.startActivity(intent);
+
                             }
                             //로그인 실패시
                             else{
@@ -70,7 +90,9 @@ public class Login extends AppCompatActivity {
                 LoginRequest loginRequest = new LoginRequest(userID, userPassword, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(Login.this);
                 queue.add(loginRequest);
+
             }
+
         });
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,5 +102,7 @@ public class Login extends AppCompatActivity {
             }
 
         });
+
     }
+
 }

@@ -9,17 +9,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-
-import java.io.IOException;
-
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
 
 /**
  * Created by mbc04 on 2019-05-27.
@@ -30,46 +22,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
     public NotificationManager mManager;
 
     @Override
-    public void onNewToken(String token) {
-        Log.d("TAG", "Refreshed token: " + token);
-
-        // If you want to send messages to this application instance or
-        // manage this apps subscriptions on the server side, send the
-        // Instance ID token to your app server.
-        registerToken(token);
-    }
-
-    public void registerToken(String token){
-        OkHttpClient client = new OkHttpClient();
-        RequestBody body = new FormBody.Builder()
-                .add("Token", token)
-                .build();
-        Log.d("TAG", " request ");
-
-        Request request = new Request.Builder()
-                .url("http://13.124.166.248/register_2.php")
-                .post(body)
-                .build();
-        Log.d("TAG", " url");
-
-        try{
-            client.newCall(request).execute();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         showNotification(remoteMessage.getData().get("message"));
-
-        Log.d("TAG", remoteMessage.getData().get("message"));
     }
 
     //알림 전송함수
-    public void showNotification(String message) {
-        Log.d("TAG", "showNotification  :  "+message);
-        String CHANNEL_ID = "Chan_channel_01";
+    private void showNotification(String message) {
+        String CHANNEL_ID = null;
+        CHANNEL_ID = "Chan_channel_01";
 
         // 채널 생성함수
         createChannels(CHANNEL_ID);
@@ -78,7 +38,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
         // 푸쉬알림 실행
         getManager().notify(0, mBuilder.build());
     }
-
 
     // 채널 생성함수
     public void createChannels(String CHANNEL_ID){
@@ -123,10 +82,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
         //푸쉬알림 생성
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(getApplicationContext(), CHANNEL_ID)
-                        .setContentTitle("통학차량 경고 알림!")// 알림 타이틀
+                        .setContentTitle("위험해요!")// 알림 타이틀
                         .setContentText(message)// 서버에서 보내는 알림 메세지
                         //푸쉬알림 설정
-                        .setSmallIcon(R.drawable.icon)
+                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
                         .setContentIntent(pendingIntent)
                         .setPriority(Notification.PRIORITY_HIGH)
                         .setDefaults(Notification.DEFAULT_VIBRATE)

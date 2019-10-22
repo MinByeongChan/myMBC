@@ -1,80 +1,146 @@
 package com.example.gta58.child1;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-public class Sub_info extends AppCompatActivity {
-    Button button;
-    private Spinner spinner2;
-    ArrayList<String> arrayList;
-    ArrayAdapter<String> arrayAdapter;
+/**
+ * Created by mbc04 on 2019-07-03.
+ */
+
+public class Sub_info extends AppCompatActivity{
+    ImageButton imgrefresh;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info);
+        imgrefresh = findViewById(R.id.ImgRefresh);
 
-        arrayList = new ArrayList<>();
-        arrayList.add("1호차");
-        arrayList.add("2호차");
-        arrayList.add("3호차");
-        arrayList.add("4호차");
-        arrayList.add("5호차");
-        final String[] select_item = {""};
+        RefreshCnt Init_refreshCnt = new RefreshCnt();;
+        RefreshTemper Init_refreshTemper = new RefreshTemper();
 
+        Init_refreshCnt.execute();
+        Init_refreshTemper.execute();
 
+        imgrefresh.setOnClickListener(new View.OnClickListener() {
+            RefreshCnt refreshCnt = new RefreshCnt();;
+            RefreshTemper refreshTemper = new RefreshTemper();
 
-        arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_dropdown_item,
-                arrayList);
-
-        spinner2 = (Spinner)findViewById(R.id.spinner2);
-        spinner2.setAdapter(arrayAdapter);
-        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-                select_item[0] = String.valueOf(arrayList.get(arg2));
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> arg0) {
-
-            }
-        });
-
-
-
-
-        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (select_item[0].equals("1반")) {
-                    Intent intent = new Intent(Sub_info.this, One.class);
-                    startActivity(intent);
-                    finish();
-
-                } else if (select_item[0].equals("2반")) {
-                    Intent intent = new Intent(Sub_info.this, Two.class);
-                    startActivity(intent);
-                    finish();
-                }
+                refreshTemper.execute();
+                refreshCnt.execute();
             }
         });
-
-
     }
 
 
+    public class RefreshTemper extends AsyncTask<Void, Void, String> {
+        String temperUrl;
+        TextView temText = (TextView)findViewById(R.id.temText);
+
+        @Override
+        protected void onPreExecute() {
+            //Value.php은 파싱으로 가져올 웹페이지
+            temperUrl = "http://13.124.166.248/maroon5/temdata1.php";
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+
+            try{
+                URL temperurl = new URL(temperUrl);//URL 객체 생성
+                HttpURLConnection httpURLConnectionTem = (HttpURLConnection)temperurl.openConnection();
+                InputStream inputStreamTem = httpURLConnectionTem.getInputStream();
+                BufferedReader bufferedReaderTem = new BufferedReader(new InputStreamReader(inputStreamTem));
+
+                String temp;
+                StringBuilder stringBuilderTem = new StringBuilder();
+
+                //한줄씩 읽어서 stringBuilder에 저장함
+                while((temp = bufferedReaderTem.readLine()) != null){
+                    stringBuilderTem.append(temp + "\n");//stringBuilder에 넣어줌
+                }
+
+                //사용했던 것도 다 닫아줌
+                bufferedReaderTem.close();
+                inputStreamTem.close();
+                httpURLConnectionTem.disconnect();
+                return stringBuilderTem.toString().trim();//trim은 앞뒤의 공백을 제거함
+
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            temText.setText(result+"°C");
+        }
+
+    }
+
+    public class RefreshCnt extends AsyncTask<Void, Void, String> {
+        String countUrl;
+        TextView countText = (TextView)findViewById(R.id.countText);
+
+        @Override
+        protected void onPreExecute() {
+            countUrl = "http://13.124.166.248/maroon5/count1.php";
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+
+            try{
+                URL url = new URL(countUrl);//URL 객체 생성
+                HttpURLConnection httpURLConnectionCnt = (HttpURLConnection)url.openConnection();
+                InputStream inputStreamCnt = httpURLConnectionCnt.getInputStream();
+                BufferedReader bufferedReaderCnt = new BufferedReader(new InputStreamReader(inputStreamCnt));
+                String temp;
+                StringBuilder stringBuilderCnt = new StringBuilder();
+                while((temp = bufferedReaderCnt.readLine()) != null){
+                    stringBuilderCnt.append(temp + "\n");                                                                                      //stringBuilder에 넣어줌
+                }
+
+                //사용했던 것도 다 닫음
+                bufferedReaderCnt.close();
+                inputStreamCnt.close();
+                httpURLConnectionCnt.disconnect();
+                return stringBuilderCnt.toString().trim();                                                                                     //trim은 앞뒤의 공백을 제거함
+
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            countText.setText(result+"명 ");
+        }
+    }
 }
-
-
-
-
-

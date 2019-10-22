@@ -24,13 +24,16 @@
         android:orientation="horizontal">
 
     </LinearLayout>
+
+
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="15dp"
         android:text="ID"
+        android:layout_gravity="center_vertical"
         android:textColor="#000000"
-        android:id="@+id/textView1"
 
         />
 
@@ -38,34 +41,36 @@
         android:id="@+id/idinput"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/border"
         android:ems="10"
         android:inputType="text"
-        android:textColor="#000000"
-        android:background="@drawable/border"
-        android:layout_marginBottom="5dp"
-        />
-
+        android:textColor="#000000" />
 
     <TextView
         android:layout_marginTop="5dp"
         android:layout_width="280dp"
-        android:layout_marginLeft="30dp"
         android:layout_height="wrap_content"
         android:text="password"
         android:textColor="#000000"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
         android:id="@+id/textView2"
 
         />
     <EditText
         android:id="@+id/passwordinput"
+        android:inputType="textPassword"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:background="@drawable/border"
+        android:layout_marginLeft="15dp"
+        android:textColor="#000000"
         android:ems="10"
-        android:inputType="textPassword"
-        android:textColor="#000000" />
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/border"
+        />
 
 
     <LinearLayout
@@ -101,7 +106,5 @@
         android:textColor="#000000"
         android:checked="true"
         />
-
-
 
 </LinearLayout>

@@ -1,6 +1,9 @@
 package com.example.gta58.child1;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AlertDialog;
@@ -11,12 +14,14 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -30,10 +35,12 @@ import org.json.JSONObject;
 
 public class Signon extends AppCompatActivity {
     public String userGender = "여성";
-    public static String userState = "학부모";
+    public String Kindergarten = "성결유치원";
+    public String BusStation = "명학역";
+    public static String userState = "Parent";
     private AlertDialog dialog;
     private boolean validate = false;
-    private int stateValue=0;
+    private int stateValue=2;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +59,17 @@ public class Signon extends AppCompatActivity {
 
         final RadioGroup stateRG = (RadioGroup) findViewById(R.id.state);
         final EditText codeText = (EditText) findViewById(R.id.codeEdt);
+        final EditText phoneText = (EditText) findViewById(R.id.phoneText);
 
         final String token = FirebaseInstanceId.getInstance().getToken();
-        Log.d("TAG", "instaneid.getinstance() :    "+token);
+        Spinner kinder = (Spinner)findViewById(R.id.kinder);
+        Spinner station = (Spinner)findViewById(R.id.station);
+
+//        final Intent intent = new Intent(getApplicationContext(), MyFirebaseInstanceIDService.class);
+//        startService(intent);
+//        Intent intent = getIntent();
+//        final String token = intent.getStringExtra("Token");
+//        Log.d("TAG","토큰   "+token);
 
         gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -68,6 +83,46 @@ public class Signon extends AppCompatActivity {
                     userGender = "남성";
                 }
                 Log.d("1 TAG  "+userGender,"  성별");
+            }
+        });
+
+        kinder.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i==0){
+                    Kindergarten = "Sungkyul";
+                }
+                else if(i==1){
+                    Kindergarten = "Myeonghak";
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        station.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i==0){
+                    BusStation = "Myeonghak Station";
+                }
+                else if(i==1){
+                    BusStation = "Myeonghak Park";
+                }
+                else if(i==2){
+                    BusStation = "Bank";
+                }
+                else if(i==3){
+                    BusStation = "Sungkyul Univ";
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
 
@@ -85,12 +140,12 @@ public class Signon extends AppCompatActivity {
                 boolean Checked = stateKinder.isChecked();
 
                 if(Checked == true){
-                    userState = "관계자";
+                    userState = "Admin";
                     stateValue = 1;
                     CodeLayout.setVisibility(View.VISIBLE);
                     CodeLayout.setAnimation(animationTrue);
                 }else{
-                    userState = "학부모";
+                    userState = "Parent";
                     stateValue = 2;
                     CodeLayout.setVisibility(View.INVISIBLE);
                 }
@@ -108,6 +163,7 @@ public class Signon extends AppCompatActivity {
 
                 //ID 값을 입력하지 않았다면
                 if (userID.equals("")) {
+
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(Signon.this);
                     dialog = builder1.setMessage("ID를 입력하세요.")
                             .setPositiveButton("OK", null)
@@ -174,16 +230,26 @@ public class Signon extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {}
         });
 
+
+
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Log.d("TAG","토큰 : "+token);
 
                 final String userID = idText.getText().toString();
                 final String userPassword = passwordText.getText().toString();
                 final String userName = nameText.getText().toString();
                 final String userEmail = emailText.getText().toString();
-                final String userCode = codeText.getText().toString();
+                String userCode = codeText.getText().toString();
+
+                if(stateValue == 2){
+                    userCode = "0000";
+                }
+
+                final String userPhone = phoneText.getText().toString();
+
 
                 //ID 중복체크를 했는지 확인함
                 if (!validate) {
@@ -242,19 +308,30 @@ public class Signon extends AppCompatActivity {
 
                             //회원 가입 성공시 success값이 true임
                             if (success) {
+
                                 Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
 
                                 //알림상자를 만들어서 보여줌
-                                AlertDialog.Builder builder8 = new AlertDialog.Builder(Signon.this);
-                                dialog = builder8.setMessage("회원가입 성공")
-                                        .setPositiveButton("확인", null)
-                                        .create();
-                                dialog.show();
+                                AlertDialog.Builder dlg = new AlertDialog.Builder(Signon.this, R.style.MyAlertDialogStyle);
+
+                                dlg.setIcon(R.drawable.cicon);
+
+                                dlg.setTitle("SUCCESS");
+
+                                dlg.setMessage(" 회원가입에 성공하였습니다.");
+
+                                dlg.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialogInterface, int i) {
+                                                finish();
+                                            }
+                                        });
+                                        getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(255, 62, 79, 92)));
+
+                                dlg.show();
 
                                 //그리고 첫화면으로 돌아감
-                                Intent intent = new Intent(Signon.this, Login.class);
-                                finish();
-                                Signon.this.startActivity(intent);
+
 
                             }
 
@@ -268,7 +345,9 @@ public class Signon extends AppCompatActivity {
                                         .setNegativeButton("ok", null)
                                         .create()
                                         .show();
+
                             }
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -279,8 +358,9 @@ public class Signon extends AppCompatActivity {
 
                 //volley 사용법
                 //1. RequestObject를 생성한다. 이때 서버로부터 데이터를 받을 responseListener를 반드시 넘겨준다.
-                SignonRequest registerRequest = new SignonRequest(
-                        userName, userID, userPassword, userEmail,
+
+                SignonRequest registerRequest = new SignonRequest(Kindergarten, BusStation,
+                        userName, userID, userPassword, userPhone, userEmail,
                         userGender, userCode, userState, token, responseListener
                 );
 
