@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="유치원">
+        <item>성결유치원</item>
+        <item>명학유치원</item>
+    </string-array>
+
+    <string-array name="정류장">
+    <item>-----</item>
+
+    </string-array>
+</resources>
