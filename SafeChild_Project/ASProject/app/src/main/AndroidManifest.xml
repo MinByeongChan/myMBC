@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.gta58.child1">
 
@@ -15,7 +15,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBabbknjowL_eBEs4-INX7UvIgU96hmobQ" />
+            android:value="GoogleMap_API_KEY" />
 
         <meta-data
             android:name="firebase_messaging_auto_init_enabled"

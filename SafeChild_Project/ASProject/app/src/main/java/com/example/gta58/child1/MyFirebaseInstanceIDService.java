@@ -28,13 +28,6 @@ public abstract class MyFirebaseInstanceIDService extends FirebaseMessagingServi
         registerToken(token);
     }
 
-//    public void onTokenRefresh()  {
-//        String token = FirebaseInstanceId.getInstance().getToken();
-//        Log.d("TAG", " getToken " + token);
-//        registerToken(token);
-//
-//    }
-
     public void registerToken(String token){
         OkHttpClient client = new OkHttpClient();
         RequestBody body = new FormBody.Builder()
