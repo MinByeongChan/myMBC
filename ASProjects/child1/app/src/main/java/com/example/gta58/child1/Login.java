@@ -56,7 +56,11 @@ public class Login extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
 
                             boolean success = jsonResponse.getBoolean("success");
-                            String value1 = jsonResponse.getString("value1");
+                            boolean state = jsonResponse.getBoolean("State");
+
+//                            String Parent = jsonResponse.getString("Parent");
+//                            String Admin = jsonResponse.getString("Admin");
+//                            String value = jsonResponse.getString("value");
 
                             if(success){
 
@@ -64,14 +68,23 @@ public class Login extends AppCompatActivity {
 //                                String userPassword = jsonResponse.getString("userPassword");
 //                                String userKinder = jsonResponse.getString("userName");
                                 Log.e("TAG TEST111 :", response);
-                                Toast.makeText(getApplicationContext(), userID, Toast.LENGTH_SHORT).show();
 
-                                //로그인에 성공했으므로 MainActivity로 넘어감
-                                Intent intent = new Intent(Login.this, MainActivity.class);
-                                intent.putExtra("value1",value1);
-                                finish();
-                                Login.this.startActivity(intent);
 
+
+                                if(state) {
+                                    //로그인에 성공했으므로 MainActivity로 넘어감
+                                    Intent intent = new Intent(Login.this, MainActivity.class);
+                                    finish();
+                                    //Login.this.startActivity(intent);
+                                    startActivity(intent);
+                                }
+
+
+                                else{
+                                    //로그인에 성공했으므로 MainActivity로 넘어감
+                                    Intent intent = new Intent(Login.this, Selection.class);
+                                    startActivity(intent);
+                                }
                             }
                             //로그인 실패시
                             else{

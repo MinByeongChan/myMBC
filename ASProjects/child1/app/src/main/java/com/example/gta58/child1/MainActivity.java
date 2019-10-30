@@ -22,9 +22,9 @@ import java.net.URL;
 
 
 public class MainActivity extends AppCompatActivity{
-    ImageButton ImageButton1;
-    ImageButton ImageButton2;
-    ImageButton ImageButton3;
+//    ImageButton ImageButton1;
+//    ImageButton ImageButton2;
+//    ImageButton ImageButton3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,11 +63,11 @@ public class MainActivity extends AppCompatActivity{
         });
 
 
-        final Intent intent = getIntent();
-        String value1 = intent.getExtras().getString("value1");
-        Toast.makeText(getApplicationContext(), value1, Toast.LENGTH_SHORT).show();
-
-        String userKinder = intent.getStringExtra("userKinder");
+//        final Intent intent = getIntent();
+//        String value1 = intent.getExtras().getString("value1");
+//        Toast.makeText(getApplicationContext(), value1, Toast.LENGTH_SHORT).show();
+//
+//        String userKinder = intent.getStringExtra("userKinder");
 //        String userID = intent.getStringExtra("userID");
 //        adminText.setText(userID);
 
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity{
 
 
     }
-
+/*
     class BackgroundTask_num_1 extends AsyncTask<Void, Void, String> {
         String target;
 
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity{
         }
 
     }
-
+*/
    /* class BackgroundTask3 extends AsyncTask<Void, Void, String> {
         String target;
         ImageView drivero = (ImageView)findViewById(R.id.drivero);

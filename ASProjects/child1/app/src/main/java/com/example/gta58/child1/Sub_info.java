@@ -28,20 +28,21 @@ public class Sub_info extends AppCompatActivity{
         setContentView(R.layout.info);
         imgrefresh = findViewById(R.id.ImgRefresh);
 
-        RefreshCnt Init_refreshCnt = new RefreshCnt();;
-        RefreshTemper Init_refreshTemper = new RefreshTemper();
+//        RefreshCnt Init_refreshCnt = new RefreshCnt();;
+//        RefreshTemper Init_refreshTemper = new RefreshTemper();
 
-        Init_refreshCnt.execute();
-        Init_refreshTemper.execute();
+//        Init_refreshCnt.execute();
+//        Init_refreshTemper.execute();
 
         imgrefresh.setOnClickListener(new View.OnClickListener() {
-            RefreshCnt refreshCnt = new RefreshCnt();;
-            RefreshTemper refreshTemper = new RefreshTemper();
+//            RefreshCnt refreshCnt = new RefreshCnt();;
+//            RefreshTemper refreshTemper = new RefreshTemper();
 
             @Override
             public void onClick(View v) {
-                refreshTemper.execute();
-                refreshCnt.execute();
+                new RefreshTemper().execute();
+                new RefreshCnt().execute();
+                new RefreshHumi().execute();
             }
         });
     }
@@ -94,6 +95,57 @@ public class Sub_info extends AppCompatActivity{
         @Override
         protected void onPostExecute(String result) {
             temText.setText(result+"°C");
+        }
+
+    }
+
+    public class RefreshHumi extends AsyncTask<Void, Void, String> {
+        String humiUrl;
+        TextView humiText = (TextView)findViewById(R.id.humiText);
+
+        @Override
+        protected void onPreExecute() {
+            //Value.php은 파싱으로 가져올 웹페이지
+            humiUrl = "http://13.124.166.248/maroon5/humi1.php";
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+
+            try{
+                URL humiurl = new URL(humiUrl);//URL 객체 생성
+                HttpURLConnection httpURLConnectionTem = (HttpURLConnection)humiurl.openConnection();
+                InputStream inputStreamTem = httpURLConnectionTem.getInputStream();
+                BufferedReader bufferedReaderTem = new BufferedReader(new InputStreamReader(inputStreamTem));
+
+                String temp;
+                StringBuilder stringBuilderTem = new StringBuilder();
+
+                //한줄씩 읽어서 stringBuilder에 저장함
+                while((temp = bufferedReaderTem.readLine()) != null){
+                    stringBuilderTem.append(temp + "\n");//stringBuilder에 넣어줌
+                }
+
+                //사용했던 것도 다 닫아줌
+                bufferedReaderTem.close();
+                inputStreamTem.close();
+                httpURLConnectionTem.disconnect();
+                return stringBuilderTem.toString().trim();//trim은 앞뒤의 공백을 제거함
+
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            humiText.setText(result+"%");
         }
 
     }

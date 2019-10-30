@@ -73,7 +73,7 @@ public class Sub_map extends FragmentActivity implements OnMapReadyCallback {
         // 각 도착지 별  위치 설정
         LatLng p1 = new LatLng(37.52619208721502 ,  126.62910393362561 );
 
-       // 구글 맵에 표시할 마커에 대한 옵션 설정
+        // 구글 맵에 표시할 마커에 대한 옵션 설정
         MarkerOptions makerOptions1 = new MarkerOptions();
         makerOptions1
                 .position(p1)

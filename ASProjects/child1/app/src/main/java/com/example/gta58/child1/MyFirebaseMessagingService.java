@@ -85,7 +85,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService{
                         .setContentTitle("위험해요!")// 알림 타이틀
                         .setContentText(message)// 서버에서 보내는 알림 메세지
                         //푸쉬알림 설정
-                        .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
+                        .setSmallIcon(R.drawable.icon)
                         .setContentIntent(pendingIntent)
                         .setPriority(Notification.PRIORITY_HIGH)
                         .setDefaults(Notification.DEFAULT_VIBRATE)

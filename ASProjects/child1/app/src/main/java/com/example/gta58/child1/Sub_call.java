@@ -31,12 +31,14 @@ public class Sub_call extends AppCompatActivity {
         ImageButton call2 = (ImageButton) findViewById(R.id.call2);
         ImageButton call3 = (ImageButton) findViewById(R.id.call3);
 
-        final String number = "01074754879";
+        final String number1 = "01074754879";
+        final String number2 = "01077020481";
+        final String number3 = "01058925806";
 
         call1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent call_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + number));
+                Intent call_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + number1));
                 //You already have permission
                 try {
                     startActivity(call_intent);
@@ -48,7 +50,7 @@ public class Sub_call extends AppCompatActivity {
         call2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent call_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number));
+                Intent call_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number2));
                 try {
                     startActivity(call_intent);
                 } catch (SecurityException e) {
@@ -59,7 +61,7 @@ public class Sub_call extends AppCompatActivity {
         call3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent call_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number));
+                Intent call_intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number3));
                 try {
                     startActivity(call_intent);
                 } catch (SecurityException e) {

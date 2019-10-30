@@ -103,6 +103,7 @@
         android:layout_height="wrap_content"
         android:text="Remember login"
         android:id="@+id/autoLogin"
+        android:visibility="invisible"
         android:textColor="#000000"
         android:checked="true"
         />

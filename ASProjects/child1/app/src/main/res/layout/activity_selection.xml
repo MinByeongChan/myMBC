@@ -38,6 +38,7 @@
 
 
     <ImageButton
+        android:id="@+id/first_busBt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
@@ -56,6 +57,7 @@
         android:layout_marginRight="10dp"
         >
         <ImageButton
+            android:id="@+id/second_busBt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
@@ -76,11 +78,12 @@
         >
 
     <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/third"
+        android:id="@+id/third_busBt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/third"
 
             />
     </LinearLayout>

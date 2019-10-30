@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -31,6 +32,8 @@ import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 
 public class Signon extends AppCompatActivity {
@@ -86,14 +89,72 @@ public class Signon extends AppCompatActivity {
             }
         });
 
+        final ArrayList<String> kin_list = new ArrayList<>();
+        kin_list.add("유치원을 선택하세요.");
+        kin_list.add("성결유치원");
+        kin_list.add("한이음유치원");
+
+//        final ArrayList<String> station_list1 = new ArrayList<>();
+//        station_list1.add("------------");
+
+//        ArrayAdapter spin_station1;
+//        spin_station1 = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, station_list1);
+//        station.setAdapter(spin_station1);
+
+
+        ArrayAdapter spin_kin;
+        spin_kin = new ArrayAdapter(this, R.layout.spinner_layout, kin_list);
+        kinder.setAdapter(spin_kin);
+
+        final ArrayAdapter spin_station;
+        final ArrayList<String> station_list = new ArrayList<>();
+        station_list.add("정류장을 선택하세요.");
+//        final String[] Station_list;
+//        final String [] Station_list = new String[100];
+
         kinder.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i==0){
-                    Kindergarten = "Sungkyul";
+                    station_list.clear();
+                    station_list.add("정류장을 선택하세요.");
+                    Kindergarten = "NULL";
                 }
+
                 else if(i==1){
-                    Kindergarten = "Myeonghak";
+                    Kindergarten = "Sungkyul";
+//                    final ArrayList<String> station_list = new ArrayList<>();
+                    station_list.clear();
+                    station_list.add("정류장을 선택하세요.");
+                    station_list.add("명학역");
+                    station_list.add("안양시보건소");
+                    station_list.add("안양아트센터");
+                    station_list.add("새마을금고");
+                    station_list.add("성결대학교 정문");
+//                    Station_list[0] = "명학역";
+//                    Station_list[1] = "안양시보건소";
+//                    Station_list[2] = "안양아트센터";
+//                    Station_list[3] = "새마을금고";
+//                    Station_list[4] = "성결대학교 정문";
+
+                }
+                else if(i==2){
+                    Kindergarten = "Hanium";
+//                    final ArrayList<String> station_list = new ArrayList<>();
+                    station_list.clear();
+
+                    station_list.add("정류장을 선택하세요.");
+                    station_list.add("한이음");
+                    station_list.add("강남역");
+                    station_list.add("신도림역");
+                    station_list.add("건대입구역");
+                    station_list.add("홍대입구역");
+//                    Station_list[0] = "한이음";
+//                    Station_list[1] = "강남역";
+//                    Station_list[2] = "신도림역";
+//                    Station_list[3] = "건대입구역";
+//                    Station_list[4] = "홍대입구역";
+
                 }
             }
 
@@ -102,21 +163,26 @@ public class Signon extends AppCompatActivity {
 
             }
         });
+
+        spin_station = new ArrayAdapter(this, R.layout.spinner_layout, station_list);
+        station.setAdapter(spin_station);
 
         station.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i==0){
-                    BusStation = "Myeonghak Station";
+                    BusStation = "정류장을 선택하세요.";
                 }
-                else if(i==1){
-                    BusStation = "Myeonghak Park";
-                }
-                else if(i==2){
-                    BusStation = "Bank";
-                }
-                else if(i==3){
-                    BusStation = "Sungkyul Univ";
+                else if (i == 1) {
+                    BusStation = "명학역";
+                } else if (i == 2) {
+                    BusStation = "안양시보건소";
+                } else if (i == 3) {
+                    BusStation = "안양아트센서";
+                } else if (i == 4) {
+                    BusStation = "새마을금고";
+                } else if (i == 5) {
+                    BusStation = "성결대학교 정문";
                 }
             }
 
@@ -125,6 +191,79 @@ public class Signon extends AppCompatActivity {
 
             }
         });
+
+//        if(Kindergarten == "Sungkyul") {
+//
+//            final ArrayList<String> station_list = new ArrayList<>();
+//            station_list.add("명학역");
+//            station_list.add("안양시보건소");
+//            station_list.add("안양아트센터");
+//            station_list.add("새마을금고");
+//            station_list.add("성결대학교 정문");
+//
+//
+//            spin_station = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, station_list);
+//            station.setAdapter(spin_station);
+//
+//            station.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                @Override
+//                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                    if (i == 0) {
+//                        BusStation = "명학역";
+//                    } else if (i == 1) {
+//                        BusStation = "안양시보건소";
+//                    } else if (i == 2) {
+//                        BusStation = "안양아트센서";
+//                    } else if (i == 3) {
+//                        BusStation = "새마을금고";
+//                    } else if (i == 4) {
+//                        BusStation = "성결대학교 정문";
+//                    }
+//                }
+//
+//                @Override
+//                public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//                }
+//            });
+//        }
+//
+//        else if(Kindergarten == "Hanium") {
+//
+//            final ArrayList<String> station_list = new ArrayList<>();
+//            station_list.add("한이음");
+//            station_list.add("강남역");
+//            station_list.add("신도림역");
+//            station_list.add("건대입구역");
+//            station_list.add("홍대입구역");
+//
+//
+//            ArrayAdapter spin_station;
+//            spin_station = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, station_list);
+//            station.setAdapter(spin_station);
+//
+//            station.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//                @Override
+//                public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//                    if (i == 0) {
+//                        BusStation = "한이음";
+//                    } else if (i == 1) {
+//                        BusStation = "강남역";
+//                    } else if (i == 2) {
+//                        BusStation = "신도림역";
+//                    } else if (i == 3) {
+//                        BusStation = "건대입구역";
+//                    } else if (i == 4) {
+//                        BusStation = "홍대입구역";
+//                    }
+//                }
+//
+//                @Override
+//                public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//                }
+//            });
+//        }
 
         //유치원 관계자 or 학부모 라디오그룹
         stateRG.setOnCheckedChangeListener((new RadioGroup.OnCheckedChangeListener() {
@@ -280,6 +419,15 @@ public class Signon extends AppCompatActivity {
                             .create();
                     dialog.show();
                     return;
+                }
+                if(Kindergarten == "NULL"){
+                    AlertDialog.Builder builder8 = new AlertDialog.Builder(Signon.this);
+                    dialog = builder8.setMessage("유치원을 선택하세요.")
+                            .setNegativeButton("OK", null)
+                            .create();
+                    dialog.show();
+                    return;
+
                 }
 
                 if (!passwordText.getText().toString().equals(checkpasswordText.getText().toString())) {
