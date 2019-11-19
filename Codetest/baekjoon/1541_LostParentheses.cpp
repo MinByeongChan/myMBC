@@ -9,40 +9,41 @@ int main() {
 
 	string temp_st = "";
 	int total_temp = 0;
-	int num_len = 1;
-	int minus = 0;
-	for (int i = 0; i < s.length(); i++) {
-		
+	int SIZE = s.length();
+	int i;
+	
+	for (i = 0; i < SIZE; i++) {
 		if (s[i] == '-') {
-			total_temp += stoi(temp_st);
-			//cout << "total: " << total_temp << "\n";
-			if (minus == 0) {
-				//기존에 스캔했던 데이터를 sum에 더함
-				sum += total_temp;
-				minus = 1;
-			}
-			else if(minus == 1) {
-				sum -= total_temp;
-				minus = 0;
-			}
-			
-			num_len = 1;
-			total_temp = 0;
-			temp_st = "";
+			break;
 		}
 		else if (s[i] == '+') {
 			total_temp += stoi(temp_st);
-			num_len = 1;
 			temp_st = "";
 		}
 
 		else {
-			temp_st += s[i];			
+			temp_st += s[i];
+		}
+	}
+
+	total_temp += stoi(temp_st);
+	sum = total_temp;
+	temp_st = "";
+	
+	for ( int j = i+1; j < SIZE; j++) {
+		if (s[j] == '+' || s[j] == '-') {
+			sum -= stoi(temp_st);
+			temp_st = "";
+		}
+
+		else {
+			temp_st += s[j];
 		}
 
 	}
-	total_temp += stoi(temp_st);
-	sum -= total_temp;
+
+	if(temp_st != "") 
+		sum -= stoi(temp_st);
 	
 	
 	cout << sum ;
