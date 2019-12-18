@@ -1,0 +1,218 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/backg"
+    android:layout_width="match_parent"
+    android:layout_height="524dp"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:layout_width="214dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:gravity="left"
+            android:paddingLeft="15dp"
+            android:text="설정"
+            android:textColor="#ffffffff"
+            android:textSize="15dp"
+            android:textStyle="italic" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#35000000"
+                android:drawableLeft="@drawable/ic_pan_tool_black_24dp"
+                android:drawablePadding="30dp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="신고대기"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="190dp"
+                android:drawableLeft="@drawable/ic_favorite_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="        신고대기 시간 설정"
+                android:textColor="#ffffffff"
+                android:textSize="9dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="#35000000"
+                android:drawableLeft="@drawable/ic_call_black_24dp"
+                android:drawablePadding="30dp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="긴급신고"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="190dp"
+                android:drawableLeft="@drawable/ic_favorite_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="        실행 방법 설정"
+                android:textColor="#ffffffff"
+                android:textSize="9dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="#35000000"
+                android:drawableLeft="@drawable/ic_room_black_24dp"
+                android:drawablePadding="30dp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="위치전송"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="190dp"
+                android:drawableLeft="@drawable/ic_favorite_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="        거리 설정"
+                android:textColor="#ffffffff"
+                android:textSize="9dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="#35000000"
+                android:drawableLeft="@drawable/ic_help_outline_black_24dp"
+                android:drawablePadding="30dp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="신고방법"
+                android:textColor="#ffffff"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="190dp"
+                android:drawableLeft="@drawable/ic_favorite_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="        실행 방법 설정"
+                android:textColor="#ffffffff"
+                android:textSize="9dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="214dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="50dp"
+            android:gravity="left"
+            android:paddingLeft="15dp"
+            android:text="정보"
+            android:textColor="#ffffffff"
+            android:textSize="15dp"
+            android:textStyle="italic" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="58dp">
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="1dp"
+                android:background="#35000000"
+                android:drawableLeft="@drawable/ic_info_outline_black_24dp"
+                android:drawablePadding="30dp"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="30dp"
+                android:text="사용자 정보"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffffff"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="190dp"
+                android:drawableLeft="@drawable/ic_favorite_black_24dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="        실행 방법 설정"
+                android:textColor="#ffffffff"
+                android:textSize="9dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+

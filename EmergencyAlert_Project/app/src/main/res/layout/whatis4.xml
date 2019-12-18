@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#35000000">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/background"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:textColor="#ffffffff"
+            android:textSize="35dp"
+            android:textStyle="normal"
+            android:gravity="center"
+            android:text="위기탈출 알리미"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:layout_marginTop="120dp"
+            android:textStyle="normal"
+            android:gravity="center_vertical"
+            android:textColor="#ffffffff"
+            android:text="디바이스에 GPS를 on으로 설정하고 구글맵을 이용하여 사용자의 위도와 경도를 확인하고 경찰과 저장한 연락처에 위치를 SMS기능과 전화기능을 이용해서 전송을 합니다."
+            />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

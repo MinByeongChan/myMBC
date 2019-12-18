@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/background">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="도움말"
+                android:background="#80000000"
+                android:gravity="center"
+                android:textColor="#ffffffff"
+                android:textSize="30dp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                android:layout_marginTop="2dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffff"
+                android:background="#35000000"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:gravity="center"
+                android:text="위기탈출 알리미는 어떤 앱인가요?"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffff"
+                android:background="#35000000"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:gravity="center"
+                android:text="위치 정보는 어떻게 공유를 하나요?"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffff"
+                android:background="#35000000"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:gravity="center"
+                android:text="연락처 등록은 어떻게 하나요?"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffff"
+                android:background="#35000000"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:gravity="center"
+                android:text="위치 정보를 어떻게 전달하게 되나요?"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:textColor="#ffffff"
+                android:background="#35000000"
+                android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+                android:textSize="20dp"
+                android:paddingLeft="10dp"
+                android:gravity="center"
+                android:text="앱 실행방법은 어떤식으로 이루어 지나요?"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#35000000">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/background"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:textColor="#ffffffff"
+            android:textSize="35dp"
+            android:textStyle="normal"
+            android:gravity="center"
+            android:text="위기탈출 알리미"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:layout_marginTop="120dp"
+            android:textStyle="normal"
+            android:gravity="center_vertical"
+            android:textColor="#ffffffff"
+            android:text="1. 앱을 실행 한다.
+
+
+
+2. 메뉴 버튼을 눌러서 실행 루틴 및 시간 설정을 해준다.
+
+
+
+3. 설정 루틴을 실행시키면 즉시신고 상태가 된다.
+
+
+
+4. 10초(즉시신고로 넘어가는 카운트다운)후 자동 즉시신고, 다시한번 하드웨어 버튼을 누를 시 즉시신고, 액티비티 들어가서 신고대기 눌러야 신고 취소를 할수있다. "
+            />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

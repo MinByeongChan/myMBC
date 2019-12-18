@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#35000000">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/background"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:textColor="#ffffffff"
+            android:textSize="35dp"
+            android:textStyle="normal"
+            android:gravity="center"
+            android:text="위기탈출 알리미"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20dp"
+            android:layout_marginTop="120dp"
+            android:textStyle="normal"
+            android:gravity="center_vertical"
+            android:textColor="#ffffffff"
+            android:text="위치 정보는 사용자의 핸드폰에 SMS기능과 전화기능만 있으면 자동으로 경찰과 지정된 연락처에 전화와 문자가 자동으로 전송이 됩니다."
+            />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>
