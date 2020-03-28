@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Webview Test</title>
+</head>
+<body>
+
+<style>
+	div{
+		width: 100%;
+		height: auto;
+	}
+	#btn{
+		width: 100px;
+		height: 50px;
+		background-color: black;
+		color: white;
+		margin: 50px;
+	}
+</style>
+<div>
+	<button id="btn">토스트 버튼</button>
+</div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+$("btn").click(function makeToast() {
+		window.Android.makeToast();
+	});
+	
+}
+</script>
+</html>

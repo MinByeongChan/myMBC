@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webview Test</title>
+</head>
+
+<style>
+	.container{
+		width: 100%;
+	}
+
+	#btn{
+		display: block;
+		width: 100px;
+		height: 50px;
+		background-color: #bbbbbb;
+		color: black;
+		margin: 0 auto;
+		border: none;
+		border-radius: 5px;
+	}
+
+	#btn:hover {
+		border: 2px solid black;
+	}
+</style>
+
+<body>
+	<div class="container">
+		<div class="content">
+			<button id="btn" onClick="javascript:makeToast()"><b>토스트 버튼</b></button>
+			<button id="btn" onClick="javascript:makeToast()"><b>토스트 버튼</b></button>
+		</div>
+	</div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	function makeToast() {
+		window.Android.makeToast();
+	}
+	$("#reload_btn").on("click", function() {
+		window.location.reload();
+	})
+</script>
+</html>

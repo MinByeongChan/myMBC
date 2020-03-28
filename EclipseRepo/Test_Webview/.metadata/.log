@@ -1,0 +1,401 @@
+!SESSION 2020-03-25 19:36:00.929 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_241
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.genuitec.eclipse.code.ui 1 0 2020-03-25 19:43:15.620
+!MESSAGE CodeMix Engine will be started momentarily to support development activities
+
+!ENTRY org.eclipse.ui 2 0 2020-03-25 19:43:17.970
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-03-25 19:43:17.970
+!MESSAGE Cannot bind to an undefined command: plug-in='com.genuitec.eclipse.theming.ui', id='com.genuitec.myeclipse.help.darktheme.commandid'
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2020-03-25 19:43:21.918
+!MESSAGE A DevStyle Theme is being activated on this workspace; preparing colors and configuration
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2020-03-25 19:43:21.953
+!MESSAGE DevStyle has archived current color configurations to alternate preferences - will be restored when switching out of the DevStyle Theme
+
+!ENTRY org.eclipse.jface 2 0 2020-03-25 19:43:26.278
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-03-25 19:43:26.278
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@412bb41f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@446dbf7b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-03-25 19:43:53.950
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\mbc04'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-25 19:44:17.778
+!MESSAGE Initializing CodeMix Engine's settings file at C:\GitHub\Test_Webview\.metadata\codemix.code-workspace
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-25 19:44:17.818
+!MESSAGE Verifying CodeMix Engine runtime integrity...
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-25 19:44:17.831
+!MESSAGE IntegrityCheck: Artifacts located at: [C:\Users\mbc04\eclipse\artifacts.xml]
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-25 19:44:18.044
+!MESSAGE Integrity check PASSED
+
+!ENTRY com.genuitec.eclipse.code.core 4 0 2020-03-25 19:44:18.072
+!MESSAGE Cannot run program "wmic": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+!STACK 0
+java.io.IOException: Cannot run program "wmic": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at com.genuitec.eclipse.code.engine.EmbeddedEngine.findProcesses(EmbeddedEngine.java:245)
+	at com.genuitec.eclipse.code.engine.EmbeddedEngine.findOrphanedEngines(EmbeddedEngine.java:216)
+	at com.genuitec.eclipse.code.engine.EmbeddedEngine.run(EmbeddedEngine.java:65)
+	at com.genuitec.eclipse.code.core.engine.app.EngineManager.run(EngineManager.java:221)
+	at com.genuitec.eclipse.code.core.engine.app.EngineManager.initialize(EngineManager.java:105)
+	at com.genuitec.eclipse.code.core.engine.EngineService.start(EngineService.java:193)
+	at com.genuitec.eclipse.code.ui.CodeService.start(CodeService.java:373)
+	at com.genuitec.eclipse.code.ui.EngineStartupHandler$1.run(EngineStartupHandler.java:124)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:444)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:140)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 9 more
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-25 19:44:18.078
+!MESSAGE Unable to find any processes when looking for orphans.
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-25 19:44:19.183
+!MESSAGE CodeMix Engine engine has been started
+
+!ENTRY com.genuitec.eclipse.code.elevation.win32 4 0 2020-03-25 19:44:38.808
+!MESSAGE wmic Windows Defender check failed
+!STACK 0
+java.io.IOException: Cannot run program "wmic": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at java.lang.Runtime.exec(Runtime.java:620)
+	at java.lang.Runtime.exec(Runtime.java:485)
+	at com.genuitec.eclipse.code.elevation.win32.windowsdefender.WindowsDefenderChecker.isWindowsDefenderActive(WindowsDefenderChecker.java:114)
+	at com.genuitec.eclipse.code.elevation.win32.windowsdefender.WindowsDefenderChecker.checkWindowsDefender(WindowsDefenderChecker.java:83)
+	at com.genuitec.eclipse.code.elevation.win32.windowsdefender.WindowsDefenderChecker.checkWindowsDefender(WindowsDefenderChecker.java:78)
+	at com.genuitec.eclipse.code.ui.welcome.internal.WindowsDefenderCheckService.lambda$0(WindowsDefenderCheckService.java:59)
+	at com.genuitec.eclipse.code.ui.CodeService$2.run(CodeService.java:1280)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:444)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:140)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 8 more
+
+!ENTRY org.eclipse.ui 2 2 2020-03-25 19:44:39.961
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-25 19:58:56.232
+!MESSAGE CodeMix blocked calls before Editor was ready [C:\GitHub\Test_Webview\Test_Webview\WebContent\hello.html]: activateEditor=1 getHover=1 getOutline=1 setCursorAndSelection=1 -- this message can normally be ignored but is tracked for support sessions.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2020-03-25 20:21:54.470
+!MESSAGE Connection to http://jope.ow2.org/update/jope/site.xml failed on jope.ow2.org. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: jope.ow2.org
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1000)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:992)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:988)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2020-03-25 20:21:54.745
+!MESSAGE Connection to http://jope.ow2.org/update/jope/p2.index failed on jope.ow2.org. Retry attempt 0 started
+!STACK 0
+java.net.UnknownHostException: jope.ow2.org
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1281)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:45)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:112)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:373)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:394)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:237)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:185)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1000)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer.access$0(HttpClientRetrieveFileTransfer.java:992)
+	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:988)
+	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2020-03-27 18:29:46.874 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_241
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.genuitec.eclipse.code.ui 1 0 2020-03-27 18:30:14.139
+!MESSAGE CodeMix Engine will be started momentarily to support development activities
+
+!ENTRY org.eclipse.jface 2 0 2020-03-27 18:30:18.858
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-03-27 18:30:18.858
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f29e67e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@16d4757f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-03-27 18:30:42.368
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\mbc04'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-27 18:30:43.984
+!MESSAGE Verifying CodeMix Engine runtime integrity...
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-27 18:30:43.993
+!MESSAGE IntegrityCheck: Artifacts located at: [C:\Users\mbc04\eclipse\artifacts.xml]
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-27 18:30:44.283
+!MESSAGE Integrity check PASSED
+
+!ENTRY com.genuitec.eclipse.code.core 4 0 2020-03-27 18:30:44.312
+!MESSAGE Cannot run program "wmic": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+!STACK 0
+java.io.IOException: Cannot run program "wmic": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at com.genuitec.eclipse.code.engine.EmbeddedEngine.findProcesses(EmbeddedEngine.java:245)
+	at com.genuitec.eclipse.code.engine.EmbeddedEngine.findOrphanedEngines(EmbeddedEngine.java:216)
+	at com.genuitec.eclipse.code.engine.EmbeddedEngine.run(EmbeddedEngine.java:65)
+	at com.genuitec.eclipse.code.core.engine.app.EngineManager.run(EngineManager.java:221)
+	at com.genuitec.eclipse.code.core.engine.app.EngineManager.initialize(EngineManager.java:105)
+	at com.genuitec.eclipse.code.core.engine.EngineService.start(EngineService.java:193)
+	at com.genuitec.eclipse.code.ui.CodeService.start(CodeService.java:373)
+	at com.genuitec.eclipse.code.ui.EngineStartupHandler$1.run(EngineStartupHandler.java:124)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:444)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:140)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 9 more
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-27 18:30:44.316
+!MESSAGE Unable to find any processes when looking for orphans.
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-27 18:30:46.059
+!MESSAGE CodeMix Engine engine has been started
+
+!ENTRY com.genuitec.eclipse.code.elevation.win32 4 0 2020-03-27 18:30:58.001
+!MESSAGE wmic Windows Defender check failed
+!STACK 0
+java.io.IOException: Cannot run program "wmic": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at java.lang.Runtime.exec(Runtime.java:620)
+	at java.lang.Runtime.exec(Runtime.java:485)
+	at com.genuitec.eclipse.code.elevation.win32.windowsdefender.WindowsDefenderChecker.isWindowsDefenderActive(WindowsDefenderChecker.java:114)
+	at com.genuitec.eclipse.code.elevation.win32.windowsdefender.WindowsDefenderChecker.checkWindowsDefender(WindowsDefenderChecker.java:83)
+	at com.genuitec.eclipse.code.elevation.win32.windowsdefender.WindowsDefenderChecker.checkWindowsDefender(WindowsDefenderChecker.java:78)
+	at com.genuitec.eclipse.code.ui.welcome.internal.WindowsDefenderCheckService.lambda$0(WindowsDefenderCheckService.java:59)
+	at com.genuitec.eclipse.code.ui.CodeService$2.run(CodeService.java:1280)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:444)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:140)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 8 more
+
+!ENTRY org.eclipse.ui 2 2 2020-03-27 18:30:58.820
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY com.genuitec.eclipse.code.ui 1 0 2020-03-27 18:31:04.376
+!MESSAGE There are task errors. See the output for details.
+
+!ENTRY com.genuitec.eclipse.code.livepreview 4 0 2020-03-27 19:05:41.269
+!MESSAGE Low level error occurred while handling event: 3
+!STACK 0
+com.genuitec.eclipse.code.livepreview.exceptions.LivePreviewCoreException: Low level error occurred while handling event: 3
+	at com.genuitec.eclipse.code.livepreview.common.HtmlNodeAdapter.notifyChanged(HtmlNodeAdapter.java:129)
+	at org.eclipse.wst.sse.core.internal.provisional.AbstractNotifier.notify(AbstractNotifier.java:204)
+	at org.eclipse.wst.xml.core.internal.document.XMLModelNotifierImpl.notify(XMLModelNotifierImpl.java:240)
+	at org.eclipse.wst.xml.core.internal.document.XMLModelNotifierImpl.notifyDeferred(XMLModelNotifierImpl.java:342)
+	at org.eclipse.wst.xml.core.internal.document.XMLModelNotifierImpl.endChanging(XMLModelNotifierImpl.java:180)
+	at org.eclipse.wst.xml.core.internal.document.DOMModelImpl.changedModel(DOMModelImpl.java:169)
+	at org.eclipse.wst.sse.core.internal.model.AbstractStructuredModel$DocumentToModelNotifier.nodesReplaced(AbstractStructuredModel.java:153)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument._fireEvent(BasicStructuredDocument.java:602)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.fireStructuredDocumentEvent(BasicStructuredDocument.java:1201)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.internalReplaceText(BasicStructuredDocument.java:1981)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.replaceText(BasicStructuredDocument.java:2425)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.replaceText(BasicStructuredDocument.java:2410)
+	at org.eclipse.wst.sse.core.internal.text.JobSafeStructuredDocument.replaceText(JobSafeStructuredDocument.java:137)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.replace(BasicStructuredDocument.java:2370)
+	at org.eclipse.wst.sse.core.internal.text.JobSafeStructuredDocument.replace(JobSafeStructuredDocument.java:100)
+	at org.eclipse.text.edits.ReplaceEdit.performDocumentUpdating(ReplaceEdit.java:79)
+	at org.eclipse.text.edits.TextEdit.traverseDocumentUpdating(TextEdit.java:920)
+	at org.eclipse.text.edits.TextEditProcessor.executeDo(TextEditProcessor.java:196)
+	at org.eclipse.text.edits.TextEdit.dispatchPerformEdits(TextEdit.java:742)
+	at org.eclipse.text.edits.TextEditProcessor.performEdits(TextEditProcessor.java:158)
+	at org.eclipse.text.edits.TextEdit.apply(TextEdit.java:714)
+	at org.eclipse.text.edits.TextEdit.apply(TextEdit.java:738)
+	at com.genuitec.eclipse.code.livepreview.common.LPCodeEditorHandler$ChangeNotifier.run(LPCodeEditorHandler.java:123)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.NullPointerException
+	at com.genuitec.eclipse.code.livepreview.common.NodeUtil$LastOffsetComparator.offset(NodeUtil.java:43)
+	at com.genuitec.eclipse.code.livepreview.common.NodeUtil$LastOffsetComparator.compare(NodeUtil.java:34)
+	at com.genuitec.eclipse.code.livepreview.common.NodeUtil$LastOffsetComparator.compare(NodeUtil.java:1)
+	at java.util.TreeMap.put(TreeMap.java:552)
+	at java.util.TreeSet.add(TreeSet.java:255)
+	at java.util.AbstractCollection.addAll(AbstractCollection.java:344)
+	at java.util.TreeSet.addAll(TreeSet.java:312)
+	at com.genuitec.eclipse.code.livepreview.common.NodeUtil.previousChildren(NodeUtil.java:83)
+	at com.genuitec.eclipse.code.livepreview.common.HtmlNodeAdapter.valueChanged(HtmlNodeAdapter.java:192)
+	at com.genuitec.eclipse.code.livepreview.common.HtmlNodeAdapter.notifyChanged(HtmlNodeAdapter.java:108)
+	... 23 more
+!SESSION 2020-03-28 15:59:58.666 -----------------------------------------------
+eclipse.buildId=4.14.0.I20191210-0610
+java.version=1.8.0_241
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.genuitec.eclipse.code.ui 1 0 2020-03-28 16:04:09.313
+!MESSAGE CodeMix Engine will be started momentarily to support development activities
+
+!ENTRY org.eclipse.jface 2 0 2020-03-28 16:04:15.292
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-03-28 16:04:15.293
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@77095c8c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f29e67e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-03-28 16:04:38.318
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\mbc04'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-28 16:04:39.045
+!MESSAGE Verifying CodeMix Engine runtime integrity...
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-28 16:04:39.054
+!MESSAGE IntegrityCheck: Artifacts located at: [C:\Users\mbc04\eclipse\artifacts.xml]
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-28 16:04:39.247
+!MESSAGE Integrity check PASSED
+
+!ENTRY com.genuitec.eclipse.code.core 4 0 2020-03-28 16:04:39.272
+!MESSAGE Cannot run program "wmic": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+!STACK 0
+java.io.IOException: Cannot run program "wmic": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at com.genuitec.eclipse.code.engine.EmbeddedEngine.findProcesses(EmbeddedEngine.java:245)
+	at com.genuitec.eclipse.code.engine.EmbeddedEngine.findOrphanedEngines(EmbeddedEngine.java:216)
+	at com.genuitec.eclipse.code.engine.EmbeddedEngine.run(EmbeddedEngine.java:65)
+	at com.genuitec.eclipse.code.core.engine.app.EngineManager.run(EngineManager.java:221)
+	at com.genuitec.eclipse.code.core.engine.app.EngineManager.initialize(EngineManager.java:105)
+	at com.genuitec.eclipse.code.core.engine.EngineService.start(EngineService.java:193)
+	at com.genuitec.eclipse.code.ui.CodeService.start(CodeService.java:373)
+	at com.genuitec.eclipse.code.ui.EngineStartupHandler$1.run(EngineStartupHandler.java:124)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:444)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:140)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 9 more
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-28 16:04:39.275
+!MESSAGE Unable to find any processes when looking for orphans.
+
+!ENTRY com.genuitec.eclipse.code.core 1 0 2020-03-28 16:04:40.807
+!MESSAGE CodeMix Engine engine has been started
+
+!ENTRY com.genuitec.eclipse.code.elevation.win32 4 0 2020-03-28 16:04:52.327
+!MESSAGE wmic Windows Defender check failed
+!STACK 0
+java.io.IOException: Cannot run program "wmic": CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at java.lang.Runtime.exec(Runtime.java:620)
+	at java.lang.Runtime.exec(Runtime.java:485)
+	at com.genuitec.eclipse.code.elevation.win32.windowsdefender.WindowsDefenderChecker.isWindowsDefenderActive(WindowsDefenderChecker.java:114)
+	at com.genuitec.eclipse.code.elevation.win32.windowsdefender.WindowsDefenderChecker.checkWindowsDefender(WindowsDefenderChecker.java:83)
+	at com.genuitec.eclipse.code.elevation.win32.windowsdefender.WindowsDefenderChecker.checkWindowsDefender(WindowsDefenderChecker.java:78)
+	at com.genuitec.eclipse.code.ui.welcome.internal.WindowsDefenderCheckService.lambda$0(WindowsDefenderCheckService.java:59)
+	at com.genuitec.eclipse.code.ui.CodeService$2.run(CodeService.java:1280)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=2, 지정된 파일을 찾을 수 없습니다
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(ProcessImpl.java:444)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:140)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 8 more
+
+!ENTRY org.eclipse.ui 2 2 2020-03-28 16:04:53.056
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)

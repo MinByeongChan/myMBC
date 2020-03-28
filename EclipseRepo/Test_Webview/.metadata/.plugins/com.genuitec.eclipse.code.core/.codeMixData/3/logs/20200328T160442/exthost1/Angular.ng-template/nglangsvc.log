@@ -1,0 +1,18 @@
+Info 0    [16:5:1.677] Format host information updated
+Info 1    [16:5:1.680] reload projects.
+Info 2    [16:5:1.680] Structure before ensureProjectForOpenFiles:
+Info 3    [16:5:1.681] Structure after ensureProjectForOpenFiles:
+Info 4    [16:5:1.681] Host file extension mappings updated
+Info 5    [16:5:1.715] Search path: c:/GitHub/Test_Webview/Test_Webview/WebContent
+Info 6    [16:5:1.718] For info: c:/GitHub/Test_Webview/Test_Webview/WebContent/hello.html :: No config files found.
+Info 7    [16:5:1.721] Loading global plugin @angular/language-service
+Info 8    [16:5:1.722] Enabling plugin @angular/language-service from candidate paths: c:/Users/mbc04/eclipse/plugins/pack.angular.win_3.6.0.202002112320/Angular.ng-template-0.900.4-fixed/node_modules/typescript/lib/tsserverlibrary.js/../../..,c:\Users\mbc04\eclipse\plugins\pack.angular.win_3.6.0.202002112320\Angular.ng-template-0.900.4-fixed\server\node_modules\@angular\language-service\bundles\language-service.umd.js
+Info 9    [16:5:1.722] Loading @angular/language-service from c:/Users/mbc04/eclipse/plugins/pack.angular.win_3.6.0.202002112320/Angular.ng-template-0.900.4-fixed/node_modules/typescript/lib/tsserverlibrary.js/../../.. (resolved to c:/Users/mbc04/eclipse/plugins/pack.angular.win_3.6.0.202002112320/Angular.ng-template-0.900.4-fixed/node_modules/node_modules)
+Info 10   [16:5:1.745] Loading @angular/language-service from c:\Users\mbc04\eclipse\plugins\pack.angular.win_3.6.0.202002112320\Angular.ng-template-0.900.4-fixed\server\node_modules\@angular\language-service\bundles\language-service.umd.js (resolved to c:/Users/mbc04/eclipse/plugins/pack.angular.win_3.6.0.202002112320/Angular.ng-template-0.900.4-fixed/server/node_modules/@angular/language-service/bundles/language-service.umd.js/node_modules)
+Info 11   [16:5:2.690] Plugin validation succeded
+Info 12   [16:5:2.696] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 13   [16:5:3.690] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true Elapsed: 994ms
+Info 14   [16:5:3.690] Project '/dev/null/inferredProject1*' (Inferred) 
+Info 15   [16:5:3.690] 	Files (6)
+
+Info 16   [16:5:3.690] -----------------------------------------------
