@@ -7,5 +7,4 @@
 
 // storiesOf("HomePageComponent", module)
 //   .addWithJSX("컨텍스트 예제", () => <HomePageComponent />)
-//   .addWithJSX("Provider 예제", () => <HomePageWithProvider />)
-//   .addWithJSX("이중 Provider 예제", () => <HomePageWithTwoProvider />);
+//   .addWithJSX("Provider 예제", () => <HomePageWithProvider />);

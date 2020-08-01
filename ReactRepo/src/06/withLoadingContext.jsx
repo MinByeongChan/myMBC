@@ -14,7 +14,7 @@ export default (WrapperComponent) => {
     );
   }
 
-  WithLoadingContext.displayName = `withLoadingContext(${wrapperComponentName})`;
+  WithLoadingContext.displayName = `withLoadingContext(${wrappedComponentName})`;
   WithLoadingContext.contextTypes = {
     loading: propTypes.bool,
     setLoading: propTypes.func,

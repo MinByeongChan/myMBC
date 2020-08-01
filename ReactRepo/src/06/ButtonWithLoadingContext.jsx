@@ -6,7 +6,7 @@ import withLoadingContext from "./withLoadingContext";
 function ButtonWithLoadingContext({ label, loading, setLoading }) {
   return (
     <Button onPress={() => setLoading(!loading)}>
-      {loading ? "?? ?" : label}
+      {loading ? "로딩 중" : label}
     </Button>
   );
 }
