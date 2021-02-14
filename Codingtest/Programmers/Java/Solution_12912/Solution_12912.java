@@ -1,4 +1,4 @@
-package Java.Programmers.Solution_12912;
+package Codingtest.Programmers.Java.Solution_12912;
 
 import java.util.ArrayList;
 import java.util.Arrays;
