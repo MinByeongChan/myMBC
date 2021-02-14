@@ -4,21 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-class CustomComparator implements Comparator<String> {
-    private int n = 0;
-
-    public CustomComparator(int n1) {
-        this.n = n1;
-    }
-
-    @Override
-    public int compare(String s1, String s2) {
-        String str1 = s1.substring(n, s1.length());
-        String str2 = s2.substring(n, s2.length());
-        return 1;
-    }
-}
-
 public class Solution_12915 {
 
     public static void main(String[] args) {
