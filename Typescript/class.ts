@@ -86,5 +86,75 @@ let tom: Animal = new Horse("TOMTOMTOMTOM")
 sam.move();
 tom.move(34);
 
-//Public, private 그리고 protected 지정자
 
+// 제네릭
+
+function identity<T>(arg: T): T {
+    return arg;
+}
+
+let output = identity<string>("myString");
+console.log(output);
+
+let myIdentity: {<U>(arg: U): U} = identity;
+
+interface GenericIdentityFn<T> {
+    <T>(arg: T): T;
+}
+
+function identity2<T>(arg: T):T {
+    return arg;
+}
+
+let myIdentity2: GenericIdentityFn<number> = identity2;
+
+
+// 제네릭 클래스
+class GenericNumber<T> {
+    zeroValue: T;
+    add: (x: T, y: T) => T;
+}
+
+let myGenericNumber = new GenericNumber<string>();
+
+myGenericNumber.zeroValue = "";
+myGenericNumber.add = function(x,y) { return x+y;} ;
+
+let stringNumeric = new GenericNumber<string>();
+stringNumeric.zeroValue = "";
+stringNumeric.add = function(x,y) {return x+ y;};
+
+console.log(stringNumeric.add(stringNumeric.zeroValue, "test"));
+
+// 제네릭을 사용할 때, .length라는 프로퍼티를 갖는 타입으로 타입을 제한하고 싶다.
+// 최소 length라는 멤버가 들어오면 length접근을 허용하고 아닐시 허용하지 않는다.
+// 그렇게 하기 위해 제약조건을 나열해야한다.
+// 제약조건은 인터페이스를 생성해 표현할 수 있다.
+interface Lengthwise {
+    length: number;
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+    console.log(arg.length);
+    return arg;
+}
+
+// console.log(loggingIdentity(3)) // 오류
+// console.log(loggingIdentity("ㅁㄴㅇㅁㄴㅇ"))          // OK
+// console.log(loggingIdentity([1,2,3,4,]))             // OK
+console.log(loggingIdentity({length: 10, value: 3}));   // OK
+
+
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
+    return obj[key];
+}
+
+let x = {a:1, b:2, c:3, d:4};
+
+getProperty(x, "a");
+getProperty(x, "d");
+
+
+function create<T>(c: {new(): T; }): T{
+    return new c();
+}
