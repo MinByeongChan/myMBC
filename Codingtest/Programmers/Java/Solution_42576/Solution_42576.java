@@ -13,6 +13,7 @@ public class Solution_42576 {
         }
         Collections.sort(p);
 
+        System.out.println("participant");
         for (String s : p) {
             System.out.print(s + " ");
         }
@@ -23,18 +24,28 @@ public class Solution_42576 {
             c.add(s);
         }
         Collections.sort(c);
+
+        System.out.println("completion");
         for (String s : c) {
             System.out.print(s + " ");
         }
         System.out.println();
+        System.out.println();
+
+        String result = "";
 
         for (int i = 0; i < c.size(); i++) {
-            if (p.get(i) != c.get(i)) {
-                return p.get(i);
+            if (!p.get(i).equals(c.get(i))) {
+                result = p.get(i);
+                break;
             }
         }
+        if (result == "") {
+            result = p.get(p.size() - 1);
+        }
 
-        return p.get(p.size() - 1);
+        // return p.get(p.size() - 1);
+        return result;
     }
 
     public static void main(String[] args) {
@@ -43,6 +54,8 @@ public class Solution_42576 {
         String completion[] = { "stanko", "ana", "mislav" };
         // String participant[] = { "leo", "kiki", "eden" };
         // String completion[] = { "eden", "kiki" };
+        // String participant[] = { "marina", "josipa", "nikola", "vinko", "filipa" };
+        // String completion[] = { "josipa", "filipa", "marina", "nikola" };
 
         answer = Solution(participant, completion);
 
@@ -62,6 +75,6 @@ public class Solution_42576 {
         // answer = entry.getValue();
         // }
 
-        System.out.print(answer);
+        System.out.print("answer : " + answer);
     }
 }
