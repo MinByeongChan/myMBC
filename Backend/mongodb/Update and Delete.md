@@ -100,3 +100,33 @@ multi키워드를 사용하지 않았을때의 update()와 비슷한 맥락이�
 find()를 사용할때와 별반 다르지 않다. title이 "Hello"인 document를 `하나만` 찾고, 수정하고 싶은 document를 작성한다.
 
 하지만, 수정하고 결과가 어떻게 변경되었는지 JSON 형태로 직관적으로 보여주는 차이점이 있다.
+
+# remove()
+
+마지막으로 제거하는 메서드를 알아보자. document를 제거하는 메서드는 remove()이다.
+
+아래는 문법이다.
+
+```
+> db.COLLECTION_NAME.remove(DELLETION_CRITTERIA)
+```
+
+# remove Only One
+
+age: 23인 항목을 하나만 지우려는 경우에 age: 23인 document가 여러개 존재할 때 사용한다.
+
+```
+> db.COLLECTION_NAME.remove(DELETION_CRITERIA,1)
+```
+
+뒤에 1을 붙혀서 하나만을 삭제한다. 또는 조건을 좀더 명확히 해서 삭제한다.
+
+# remove All
+
+하나만 삭제하는 것도 존재하는 반면, age : 23인 document를 모두삭제하는 방법도 있다.
+
+```
+> db.COLLECTION_NAME.remove({})
+```
+
+빈 오프젝트`{}`를 넣으면 모드 document가 삭제된다.
