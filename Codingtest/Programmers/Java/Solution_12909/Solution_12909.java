@@ -7,23 +7,29 @@ public class Solution_12909 {
 
         for (int i = 0; i < s.length(); i++) {
             String ss = String.valueOf(s.charAt(i));
+            int LEN = list.size();
 
-            System.out.println("ss : " + ss);
             if (list.size() == 0) {
-                System.out.println("ADD");
-                list.add(ss);
-                continue;
-            } else {
-                int LEN = list.size();
-
-                if (list.get(LEN - 1) != ss) {
-                    System.out.println("POP");
-                    list.remove(LEN - 1);
+                if (ss.equals(")")) {
+                    return false;
                 } else {
-                    System.out.println("ADD");
                     list.add(ss);
+                    continue;
                 }
             }
+
+            if (list.get(LEN - 1).equals("(") && ss.equals(")")) {
+                list.remove(LEN - 1);
+            } else {
+                list.add(ss);
+            }
+            // if (!list.get(LEN - 1).equals(ss)) {
+            // System.out.println("POP");
+            // list.remove(LEN - 1);
+            // } else {
+            // System.out.println("ADD");
+            // list.add(ss);
+            // }
         }
 
         if (list.size() == 0)
@@ -33,12 +39,8 @@ public class Solution_12909 {
     }
 
     public static void main(String[] args) {
-        String s = "(()(";
+        String s = "()()";
         boolean result = solution(s);
-
-        String a = "asd";
-        String b = a + "";
-        System.out.println(a == b);
 
         System.out.println("result " + result);
     }

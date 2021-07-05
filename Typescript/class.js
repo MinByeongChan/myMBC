@@ -2,19 +2,6 @@
 // function greeter(person: string): string {
 //     return "Hello, "+person;
 // }
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 // let user: string = 'jane User';
 // // 인터페이스 예제
 // interface Person {
@@ -82,32 +69,69 @@ var __extends = (this && this.__extends) || (function () {
 // let tom: Animal = new Horse("TOMTOMTOMTOM")
 // sam.move();
 // tom.move(34);
-// //Public, private 그리고 protected 지정자
-var Animal = /** @class */ (function () {
-    function Animal(theName) {
-        this.name = theName;
+// // 제네릭
+// function identity<T>(arg: T): T {
+//     return arg;
+// }
+// let output = identity<string>("myString");
+// console.log(output);
+// let myIdentity: {<U>(arg: U): U} = identity;
+// interface GenericIdentityFn<T> {
+//     <T>(arg: T): T;
+// }
+// function identity2<T>(arg: T):T {
+//     return arg;
+// }
+// let myIdentity2: GenericIdentityFn<number> = identity2;
+// // 제네릭 클래스
+// class GenericNumber<T> {
+//     zeroValue: T;
+//     add: (x: T, y: T) => T;
+// }
+// let myGenericNumber = new GenericNumber<string>();
+// myGenericNumber.zeroValue = "";
+// myGenericNumber.add = function(x,y) { return x+y;} ;
+// let stringNumeric = new GenericNumber<string>();
+// stringNumeric.zeroValue = "";
+// stringNumeric.add = function(x,y) {return x+ y;};
+// console.log(stringNumeric.add(stringNumeric.zeroValue, "test"));
+// // 제네릭을 사용할 때, .length라는 프로퍼티를 갖는 타입으로 타입을 제한하고 싶다.
+// // 최소 length라는 멤버가 들어오면 length접근을 허용하고 아닐시 허용하지 않는다.
+// // 그렇게 하기 위해 제약조건을 나열해야한다.
+// // 제약조건은 인터페이스를 생성해 표현할 수 있다.
+// interface Lengthwise {
+//     length: number;
+// }
+// function loggingIdentity<T extends Lengthwise>(arg: T): T {
+//     console.log(arg.length);
+//     return arg;
+// }
+// // console.log(loggingIdentity(3)) // 오류
+// // console.log(loggingIdentity("ㅁㄴㅇㅁㄴㅇ"))          // OK
+// // console.log(loggingIdentity([1,2,3,4,]))             // OK
+// console.log(loggingIdentity({length: 10, value: 3}));   // OK
+// function getProperty<T, K extends keyof T>(obj: T, key: K) {
+//     return obj[key];
+// }
+// let x = {a:1, b:2, c:3, d:4};
+// getProperty(x, "a");
+// getProperty(x, "d");
+// function create<T>(c: {new(): T; }): T{
+//     return new c();
+// }
+function calcAvgHeight(data) {
+    var LEN = Object.keys(data).length;
+    if (data === undefined || LEN === 0) {
+        return null;
     }
-    return Animal;
-}());
-var Rhino = /** @class */ (function (_super) {
-    __extends(Rhino, _super);
-    function Rhino(name) {
-        return _super.call(this, name) || this;
-    }
-    Rhino.prototype.display = function () {
-        console.log("hello");
-    };
-    return Rhino;
-}(Animal));
-var Employee = /** @class */ (function () {
-    function Employee(theName) {
-        this.name = theName;
-    }
-    return Employee;
-}());
-var animal = new Animal("Goat");
-var rhino = new Rhino("hello");
-var employee = new Employee("Bob");
-animal = rhino;
-rhino.display();
-// animal = employee; // 오류: 'Animal'과 'Employee'은 호환될 수 없음.
+    var sum = 0;
+    Object.keys(data).forEach(function (key) {
+        console.log(key, data[key]);
+        var height = data[key].height;
+        console.log(height);
+        sum += height;
+    });
+    return sum / LEN;
+}
+var avgHeight = calcAvgHeight({});
+console.log(avgHeight);
