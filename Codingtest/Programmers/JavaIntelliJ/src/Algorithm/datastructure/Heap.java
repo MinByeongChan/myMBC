@@ -1,4 +1,4 @@
-package dataStructure;
+package Algorithm.datastructure;
 
 public class Heap {
     int SIZE;

@@ -1,7 +1,5 @@
 package Algorithm.sort;
 
-import java.util.Collections;
-
 public class SelectionSort {
 
     public static void main(String[] args) {
